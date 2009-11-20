@@ -2,6 +2,8 @@ require 'redmine'
 
 require 'default_assign_issue_patch'
 require 'default_assign_project_patch'
+require 'default_assign/hooks/external_signup_hooks'
+require 'default_assign/hooks/default_assign_projects_hooks'
 
 require 'dispatcher'
 
