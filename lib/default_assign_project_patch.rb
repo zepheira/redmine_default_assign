@@ -6,6 +6,7 @@ module DefaultAssignProjectPatch
     base.class_eval do
       unloadable
 
+      safe_attributes :default_assignee_id
       belongs_to :default_assignee, :class_name => "User"
       before_save :set_default_assignee
     end
