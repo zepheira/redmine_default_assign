@@ -8,6 +8,7 @@ module DefaultAssignProjectPatch
 
       belongs_to :default_assignee, :class_name => "User"
       before_save :set_default_assignee
+      safe_attributes 'default_assignee_id'
     end
   end
 
