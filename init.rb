@@ -4,6 +4,7 @@ require 'dispatcher'
 require 'default_assign_issue_patch'
 require 'default_assign_project_patch'
 require 'default_assign/hooks/default_assign_projects_hooks'
+require 'default_assign/hooks/default_assign_issues_hooks.rb'
 
 
 Dispatcher.to_prepare do

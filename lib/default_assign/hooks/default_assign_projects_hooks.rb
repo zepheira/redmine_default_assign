@@ -12,4 +12,5 @@ class DefaultAssignProjectHook < Redmine::Hook::ViewListener
                                       options_from_collection_for_select(context[:project].assignable_users, :id, :name, Integer(selected)), {:include_blank => :none}))
  
   end
+
 end
