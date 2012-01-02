@@ -7,9 +7,7 @@ class DefaultAssignIssueHook < Redmine::Hook::ViewListener
 											not context[:project].assignable_users.member?(User.find(Setting.plugin_redmine_default_assign['default_assignee_id']).id)
       selected ||= nil
       
-      context[:issue].assigned_to_id = selected
-      
-      print context[:issue].inspect
+      context[:issue].assigned_to_id = selected      
     end
     
     return
