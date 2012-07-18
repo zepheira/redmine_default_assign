@@ -1,17 +1,27 @@
 require 'redmine'
-require 'dispatcher'
+
+# Including dispatcher.rb in case of Rails 2.x
+require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
 
 require 'default_assign_issue_patch'
 require 'default_assign_project_patch'
 require 'default_assign/hooks/default_assign_projects_hooks'
 require 'default_assign/hooks/default_assign_issues_hooks.rb'
 
-
-Dispatcher.to_prepare do
-  require_dependency 'project'
-  require_dependency 'issue'
-  Project.send(:include, DefaultAssignProjectPatch)
-  Issue.send(:include, DefaultAssignIssuePatch)
+if Rails::VERSION::MAJOR >= 3
+  ActionDispatch::Callbacks.to_prepare do
+    require_dependency 'project'
+    require_dependency 'issue'
+    Project.send(:include, DefaultAssignProjectPatch)
+    Issue.send(:include, DefaultAssignIssuePatch)
+  end
+else
+  Dispatcher.to_prepare do
+    require_dependency 'project'
+    require_dependency 'issue'
+    Project.send(:include, DefaultAssignProjectPatch)
+    Issue.send(:include, DefaultAssignIssuePatch)
+  end
 end
 
 Redmine::Plugin.register :redmine_default_assign do
