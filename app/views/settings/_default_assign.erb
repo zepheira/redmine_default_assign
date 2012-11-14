@@ -15,7 +15,11 @@
     <%=
       select_tag("settings[default_assignee_id]",
                  content_tag(:option, '') +
-                 options_from_collection_for_select(users, :id, :name, selected ),
+                 options_from_collection_for_select(users, :id, :name,
+                 unless selected.blank?
+                 Integer(selected)
+                 end
+                 ),
                  :multiple => false,
                  :size => 5)
     %>

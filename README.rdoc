@@ -26,5 +26,3 @@ as members of your project and then the dropdown will be populated.
 == Plugin help
 
 If you need help you can contact the maintainer at http://github.com/rchady.
-
-
