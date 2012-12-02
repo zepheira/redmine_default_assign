@@ -1,0 +1,7 @@
+# Spanish strings go here for Rails i18n
+es:
+  field_default_assignee: "Asignar por defecto"
+  default_assign_text_settings: "Opciones"
+  default_assign_settings_help: "Asignado por defecto a nuevos proyectos"
+  label_user: "Usuario"
+
