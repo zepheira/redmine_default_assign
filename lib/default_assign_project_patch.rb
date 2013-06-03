@@ -7,7 +7,7 @@ module DefaultAssignProjectPatch
       unloadable
 
       safe_attributes :default_assignee_id
-      belongs_to :default_assignee, :class_name => "User"
+      belongs_to :default_assignee, :class_name => "Principal"
       before_save :set_default_assignee
     end
   end
