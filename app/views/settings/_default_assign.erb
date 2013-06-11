@@ -22,9 +22,21 @@
                  ),
                  :multiple => false,
                  :size => 5)
-    %>
-    <% else %>
-      <%= link_to(l(:default_assign_missing_users), :controller =>
-      'users', :action => 'index') %>
+   %>
+   <% else %>
+     <%= link_to(l(:default_assign_missing_users),
+                   :controller => 'users', :action => 'index') %>
    <% end %>
+ </p>
+
+ <p><%= l(:interactive_assignment_explanation) %></p>
+ <p>
+   <%= label('settings[interactive_assignment]', l(:interactive_assignment)) %>
+   <%-
+     interactive_assignment = @settings['interactive_assignment'] || 'true'
+     interactive_assignment = (interactive_assignment == 'true')
+   -%>
+   <%= hidden_field_tag('settings[interactive_assignment]', false) %>
+   <%= check_box_tag('settings[interactive_assignment]', true, interactive_assignment) %>
+ </p>
 </fieldset>

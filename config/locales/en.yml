@@ -3,5 +3,12 @@ en:
   field_default_assignee: "Default Assignee"
   default_assign_text_settings: "Options"
   default_assign_settings_help: "Default assign for new projects"
+  interactive_assignment_explanation: >
+    When creating a new issue, the plugin can populate the assignee with the
+    default assignee you've chosen above, so that it'll be visible even before
+    you've created the issue. However, when you change certain fields, the form
+    is reloaded and the default assignee is recalculated. This might be what you
+    want, or it might be undesirable, so you can make the choice yourself:
+  interactive_assignment: "Set Assignee Interactively"
   label_user: "User"
 

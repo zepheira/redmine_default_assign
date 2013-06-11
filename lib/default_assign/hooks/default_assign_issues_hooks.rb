@@ -3,6 +3,12 @@ class DefaultAssignIssueHook < Redmine::Hook::ViewListener
     # We only want to modify new issues; new issues haven't been assigned an id
     return  if not context[:issue].id.nil?
 
+    # Don't do anything if we don't want interactive assignment
+    interactive_assignment =
+      Setting.plugin_redmine_default_assign['interactive_assignment'] || 'true'
+    interactive_assignment = (interactive_assignment == 'true')
+    return  if not interactive_assignment
+
     selected = nil
     if not context[:project].default_assignee.blank?
       selected = context[:project].default_assignee.id
