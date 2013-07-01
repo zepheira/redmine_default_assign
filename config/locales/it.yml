@@ -12,4 +12,4 @@ it:
     quindi è un'opzione a scelta:
   interactive_assignment: "Imposta l'assegnatario in maniera interattiva"
   label_user: "Utente"
-
+  none_selected: "<Nessuno>"
