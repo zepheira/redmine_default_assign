@@ -10,7 +10,10 @@ class DefaultAssignIssueHook < Redmine::Hook::ViewListener
     return  if not interactive_assignment
 
     if not context[:project].default_assignee.blank?
-      context[:issue].assigned_to_id = context[:project].default_assignee.id
+      default_assignee = context[:project].default_assignee
+      if context[:project].assignable_users.include?(default_assignee)
+        context[:issue].assigned_to_id = default_assignee.id
+      end
     end
 
     nil

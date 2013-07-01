@@ -12,3 +12,4 @@ en:
     de nouveau. Ceci pourrait être ce que vous voulez, ou peut être pas, donc
     vous pouvez faire le choix vous-même:
   label_user: "Utilisateur"
+  none_selected: "<Aucun>"

@@ -11,4 +11,4 @@ en:
     want, or it might be undesirable, so you can make the choice yourself:
   interactive_assignment: "Set Assignee Interactively"
   label_user: "User"
-
+  none_selected: "<None>"
