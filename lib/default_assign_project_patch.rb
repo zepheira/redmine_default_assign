@@ -17,10 +17,7 @@ module DefaultAssignProjectPatch
 
   module InstanceMethods
     def set_default_assignee 
-      if not self.persisted?
-        self.default_assignee_id ||=
-          Setting.plugin_redmine_default_assign['default_assignee_id']
-      end
+      self.default_assignee_id ||= Setting.plugin_redmine_default_assign['default_assignee_id']
     end
   end
 end
